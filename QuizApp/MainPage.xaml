@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QuizApp"
+             x:Class="QuizApp.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TrueTextColor">White</Color>
+            <Color x:Key="FalseTextColor">#ED1D24</Color>
+            <Color x:Key="TrueBackgroundColor">#ED1D24</Color>
+            <Color x:Key="FalseBackgroundColor">White</Color>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="0, 5" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="FontSize" Value="Large"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <StackLayout Margin="0, 5, 0, 0">
+            <Label HorizontalOptions="Center" Text="Are you Wanda or Vision?" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout>
+        <StackLayout VerticalOptions="Start">
+            <Label
+                x:Name="QuestionNumberLabel"
+                Text="Question 1"
+                Margin="10, 40, 10, 0"
+                FontSize="Caption" />
+            <Label
+                x:Name="QuestionLabel"
+                FontSize="Large"
+                HorizontalOptions="Start"
+                Text="Which superpower would you choose?"
+                Margin="10, 0, 10, 0" />
+            <Frame
+                Margin="10"
+                Padding="0"
+                HasShadow="True"
+                CornerRadius="9"
+                IsClippedToBounds="True"
+                VerticalOptions="FillAndExpand"
+                HeightRequest="450">
+                <Image
+                    x:Name="QuestionImage"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Aspect="AspectFill"
+                    Source="question1.jpg"
+                    Margin="0" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout
+            Margin="10, 30"
+            Orientation="Vertical">
+            <Button
+                x:Name="FalseButton"
+                Text="False"
+                BackgroundColor="{StaticResource FalseBackgroundColor}"
+                TextColor="{StaticResource FalseTextColor}"
+                BorderColor="{StaticResource FalseTextColor}"
+                BorderWidth="2"
+                Clicked="FalseButton_OnClicked" />
+            <Button
+                x:Name="TrueButton"
+                Text="True"
+                BackgroundColor="{StaticResource TrueBackgroundColor}"
+                TextColor="{StaticResource TrueTextColor}"
+                Clicked="TrueButton_OnClicked" />
+            <Button
+                x:Name="RetakeQuizButton"
+                Text="Retake Quiz"
+                BackgroundColor="{StaticResource TrueBackgroundColor}"
+                TextColor="{StaticResource TrueTextColor}"
+                IsVisible="False"
+                Clicked="RetakeQuizButton_OnClicked" />
+        </StackLayout>
+
+
+    </StackLayout>
+
+
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{208F4EAC-C87A-4249-9561-5DF6C48E585C}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="QuizApp.iOS/Main.cs" Line="16" Column="1" />
+      <File FileName="QuizApp/MainPage.xaml" Line="40" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="QuizApp" expanded="True">
+            <Node name="QuizApp" expanded="True" />
+            <Node name="QuizApp.iOS" expanded="True">
+              <Node name="Assets.xcassets" selected="True" />
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.QuizApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A5A04165-BE62-4D4F-A83F-EAE1D9686867" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.QuizApp.Android PreferredExecutionTarget="Android.Pixel_2_API_30" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
