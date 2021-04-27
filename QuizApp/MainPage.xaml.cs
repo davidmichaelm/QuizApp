@@ -17,18 +17,6 @@ namespace QuizApp
             SetQA(CurrentQAIndex);
         }
 
-        private void FalseButton_OnClicked(object sender, EventArgs e)
-        {
-            CurrentQA.UserAnswer = false;
-            NextQA();
-        }
-
-        private void TrueButton_OnClicked(object sender, EventArgs e)
-        {
-            CurrentQA.UserAnswer = true;
-            NextQA();
-        }
-
         private void NextQA()
         {
             CurrentQAIndex++;
@@ -64,19 +52,36 @@ namespace QuizApp
             QuestionLabel.Text = $"You got: {answer}!";
             QuestionImage.Source = image;
 
-            FalseButton.IsVisible = false;
-            TrueButton.IsVisible = false;
+            FalseLabel.IsVisible = false;
+            TrueLabel.IsVisible = false;
             RetakeQuizButton.IsVisible = true;
         }
 
         private void RetakeQuizButton_OnClicked(object sender, EventArgs e)
         {
-            FalseButton.IsVisible = true;
-            TrueButton.IsVisible = true;
+            FalseLabel.IsVisible = true;
+            TrueLabel.IsVisible = true;
             RetakeQuizButton.IsVisible = false;
             
             CurrentQAIndex = 0;
             SetQA(0);
+        }
+
+        private void OnSwiped(object sender, SwipedEventArgs e)
+        {
+            var dir = e.Direction.ToString();
+            if (dir == "Left")
+            {
+                CurrentQA.UserAnswer = false;
+            } else if (dir == "Right")
+            {
+                CurrentQA.UserAnswer = true;
+            }
+            else
+            {
+                return;
+            }
+            NextQA();
         }
     }
 }

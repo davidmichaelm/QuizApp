@@ -47,6 +47,12 @@
                 IsClippedToBounds="True"
                 VerticalOptions="FillAndExpand"
                 HeightRequest="450">
+                <Frame.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped"/>
+                    <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
+                    <SwipeGestureRecognizer Direction="Up" Swiped="OnSwiped"/>
+                    <SwipeGestureRecognizer Direction="Down" Swiped="OnSwiped"/>
+                </Frame.GestureRecognizers>
                 <Image
                     x:Name="QuestionImage"
                     VerticalOptions="FillAndExpand"
@@ -58,22 +64,24 @@
         </StackLayout>
 
         <StackLayout
-            Margin="10, 30"
-            Orientation="Vertical">
-            <Button
-                x:Name="FalseButton"
-                Text="False"
-                BackgroundColor="{StaticResource FalseBackgroundColor}"
-                TextColor="{StaticResource FalseTextColor}"
-                BorderColor="{StaticResource FalseTextColor}"
-                BorderWidth="2"
-                Clicked="FalseButton_OnClicked" />
-            <Button
-                x:Name="TrueButton"
-                Text="True"
-                BackgroundColor="{StaticResource TrueBackgroundColor}"
-                TextColor="{StaticResource TrueTextColor}"
-                Clicked="TrueButton_OnClicked" />
+            Margin="10, 0"
+            Orientation="Horizontal"
+            >
+            <StackLayout
+                x:Name="FalseLabel"
+                Orientation="Vertical"
+                HorizontalOptions="StartAndExpand">
+                <Label>Swipe Left</Label>
+                <Label x:Name="FalseButton" FontSize="Large" FontAttributes="Bold"></Label>
+            </StackLayout>
+            
+            <StackLayout
+                x:Name="TrueLabel"
+                Orientation="Vertical"
+                HorizontalOptions="EndAndExpand">
+                <Label HorizontalTextAlignment="End">Swipe Right</Label>
+                <Label x:Name="TrueButton" HorizontalTextAlignment="End" FontSize="Large" FontAttributes="Bold"></Label>
+            </StackLayout>
             <Button
                 x:Name="RetakeQuizButton"
                 Text="Retake Quiz"
